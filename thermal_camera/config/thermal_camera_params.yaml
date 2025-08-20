@@ -1,0 +1,5 @@
+thermal_camera:
+  ros__parameters:
+    image_topic: "/ir_camera/image"
+    frame_rate: 30
+    color_map: "inferno"

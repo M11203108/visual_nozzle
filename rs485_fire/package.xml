@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd"
+            schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rs485_fire</name>
+  <version>0.1.0</version>
+  <description>Fire-extinguishing RS-485 control &amp; trajectory planning nodes.</description>
+
+  <maintainer email="mm11203108@gmail.com">robot</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- build tool -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- build deps (只有真的需要在編譯期連結才放這裡；純 Python 通常不需要) -->
+  <build_depend>cv_bridge</build_depend>
+
+  <!-- runtime deps -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+
+  <!-- alignment_controller 相關 -->
+  <exec_depend>nav_msgs</exec_depend>            <!-- /odom: nav_msgs/msg/Odometry -->
+  <exec_depend>nav2_msgs</exec_depend>           <!-- /spin action 型別等 -->
+  <exec_depend>nav2_simple_commander</exec_depend> <!-- BasicNavigator (apt: python3-nav2-simple-commander) -->
+  <exec_depend>lifecycle_msgs</exec_depend>      <!-- Nav2 lifecycle 互動（由 commander 使用） -->
+
+  <!-- 有使用 launch 檔建議宣告 -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- Python 科學套件（rosdep key） -->
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+
+  <!-- tests -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

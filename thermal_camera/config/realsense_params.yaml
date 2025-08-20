@@ -1,0 +1,23 @@
+realsense2_camera:
+  ros__parameters:
+    enable_depth: true
+    enable_color: false
+    enable_infra1: false
+    enable_infra2: false
+    enable_gyro: false
+    enable_accel: false
+
+    filters: "spatial,temporal,decimation,holes_fill"
+
+    # Spatial Filter
+    spatial_filter_magnitude: 3           # 鄰域範圍 1~5
+    spatial_filter_smooth_alpha: 0.5      # 平滑強度 0~1
+    spatial_filter_smooth_delta: 20       # 邊緣保存 0~100
+    spatial_filter_holes_fill: 1          # 是否補洞 (0:關閉, 1:補少量, 2:補多)
+
+    # Temporal Filter
+    temporal_filter_smooth_alpha: 0.4     # 時間平滑程度
+    temporal_filter_smooth_delta: 20      # 邊緣保存
+
+    # Decimation Filter
+    decimation_filter_magnitude: 2        # 解析度降低倍數（預設為2）
